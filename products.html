@@ -6,6 +6,13 @@
     <title>Products | Charlie&Co</title>
     <link rel="stylesheet" href="style.css"> 
     
+    <style>
+        /* This ensures no content forces the body wider than the screen */
+        body {
+            overflow-x: hidden;
+        }
+    </style>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script> 
     <script>
@@ -30,14 +37,14 @@
     <custom-navbar></custom-navbar>
 
     <main class="container mx-auto px-4 py-12 flex-grow">
-        <h1 class="text-6xl font-extrabold mb-12 uppercase text-center">Our Latest Drops</h1>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-12 uppercase text-center">Our Latest Drops</h1>
         
-        <div class="flex justify-center mb-10 border-b border-gray-200">
-            <button class="filter-btn active text-lg font-bold uppercase mx-4 py-2 hover:text-accent transition-colors" data-filter="all">All Shoes</button>
-            <button class="filter-btn text-lg font-bold uppercase mx-4 py-2 hover:text-accent transition-colors" data-filter="nike">Nike</button>
-            <button class="filter-btn text-lg font-bold uppercase mx-4 py-2 hover:text-accent transition-colors" data-filter="adidas">Adidas</button>
-            <button class="filter-btn text-lg font-bold uppercase mx-4 py-2 hover:text-accent transition-colors" data-filter="new balance">New Balance</button>
-            <button class="filter-btn text-lg font-bold uppercase mx-4 py-2 hover:text-accent transition-colors" data-filter="steve madden">Steve Madden</button>
+        <div class="flex flex-wrap justify-center mb-10 border-b border-gray-200">
+            <button class="filter-btn active text-sm sm:text-base font-bold uppercase m-1 sm:mx-2 py-2 hover:text-accent transition-colors" data-filter="all">All Shoes</button>
+            <button class="filter-btn text-sm sm:text-base font-bold uppercase m-1 sm:mx-2 py-2 hover:text-accent transition-colors" data-filter="nike">Nike</button>
+            <button class="filter-btn text-sm sm:text-base font-bold uppercase m-1 sm:mx-2 py-2 hover:text-accent transition-colors" data-filter="adidas">Adidas</button>
+            <button class="filter-btn text-sm sm:text-base font-bold uppercase m-1 sm:mx-2 py-2 hover:text-accent transition-colors" data-filter="new balance">New Balance</button>
+            <button class="filter-btn text-sm sm:text-base font-bold uppercase m-1 sm:mx-2 py-2 hover:text-accent transition-colors" data-filter="steve madden">Steve Madden</button>
         </div>
 
         <div id="products-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
