@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charlie&Co | Premium Sneakers</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="components/product-card.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    // Adjusted colors for a more standard premium sportswear look
+                    colors: {
+                        primary: '#000000', // Black
+                        secondary: '#ffffff', // White (for text/background contrast)
+                        accent: '#1e90ff' // Dodger Blue - a strong, athletic accent color
+                    },
+                    // Added a custom spacing for larger hero content on desktop
+                    spacing: {
+                        '128': '32rem',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-gray-900 font-sans">
+    <custom-navbar></custom-navbar>
+
+    <section class="relative h-screen overflow-hidden flex items-center justify-center">
+        <div class="absolute inset-0">
+             <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+                <source src="item343.mp4" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
+        </div>
+        <div class="relative z-10 h-full flex flex-col justify-center items-center text-center px-4">
+            <h1 class="text-6xl sm:text-7xl lg:text-8xl font-extrabold text-white mb-6 uppercase tracking-tight" style="text-shadow: 0 4px 8px rgba(0,0,0,0.5);">
+                STEP INTO THE <span class="text-accent">NEXT LEVEL</span>
+            </h1>
+            <p class="text-xl md:text-3xl font-light text-white mb-10 max-w-3xl">
+                Unrivaled performance. Iconic style.
+            </p>
+            <a href="#shop" class="bg-white hover:bg-gray-200 text-primary font-bold py-4 px-12 rounded-full text-xl uppercase transition-all duration-300 transform hover:scale-105 shadow-xl">
+                SHOP THE COLLECTION
+            </a>
+        </div>
+    </section>
+
+    ---
+
+    <section class="py-3 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-xl font-medium text-center mb-10 text-gray-500 uppercase tracking-widest">TRUSTED BY ATHLETES & PROFESSIONALS</h2>
+        </div>
+    </section>
+
+    ---
+
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-extrabold text-center mb-12 uppercase">EXPLORE YOUR STYLE</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <a href="/running" class="relative group overflow-hidden rounded-lg shadow-xl transform hover:scale-[1.02] transition-transform duration-500">
+                    <img src="item5.jpg" alt="Running Shoes" class="w-full h-96 object-cover transition-opacity duration-500 group-hover:opacity-80">
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-end p-6">
+                        <h3 class="text-3xl font-bold text-white uppercase tracking-wider">LIFESTYLE</h3>
+                    </div>
+                </a>
+                <a href="/lifestyle" class="relative group overflow-hidden rounded-lg shadow-xl transform hover:scale-[1.02] transition-transform duration-500">
+                    <img src="item6.jpg" alt="Lifestyle Sneakers" class="w-full h-96 object-cover transition-opacity duration-500 group-hover:opacity-80">
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-end p-6">
+                        <h3 class="text-3xl font-bold text-white uppercase tracking-wider">RUNNING-INSPIRED</h3>
+                    </div>
+                </a>
+                <a href="/basketball" class="relative group overflow-hidden rounded-lg shadow-xl transform hover:scale-[1.02] transition-transform duration-500">
+                    <img src="item7.jpg" alt="Basketball Shoes" class="w-full h-96 object-cover transition-opacity duration-500 group-hover:opacity-80">
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-end p-6">
+                        <h3 class="text-3xl font-bold text-white uppercase tracking-wider">RUNNING/FASHION</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    ---
+
+    <section id="shop" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 border-b-2 border-gray-100 pb-4">
+                <h2 class="text-4xl font-extrabold uppercase mb-4 md:mb-0">NEW RELEASES</h2>
+                <div class="flex flex-wrap gap-2 sm:gap-4">
+                    <button class="filter-btn text-sm px-4 py-2 rounded-full border border-primary active:bg-primary active:text-white transition-colors" data-filter="all">All</button>
+                    <button class="filter-btn text-sm px-4 py-2 rounded-full border border-gray-300 hover:border-primary transition-colors" data-filter="running">Running</button>
+                    <button class="filter-btn text-sm px-4 py-2 rounded-full border border-gray-300 hover:border-primary transition-colors" data-filter="lifestyle">Lifestyle</button>
+                    <button class="filter-btn text-sm px-4 py-2 rounded-full border border-gray-300 hover:border-primary transition-colors" data-filter="basketball">Basketball</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8" id="products-grid">
+                </div>
+
+            <div class="text-center mt-12">
+                 <a href="/all-products" class="text-lg font-semibold text-primary border-b-2 border-primary hover:text-accent hover:border-accent transition-colors inline-flex items-center group">
+                    VIEW ALL PRODUCTS
+                    <i data-feather="arrow-right" class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    ---
+
+    <section class="py-20 bg-primary text-white overflow-hidden">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col md:flex-row items-center gap-16">
+      
+      <!-- Text content -->
+     <div class="md:w-1/2 order-2 md:order-1">
+  <h2 class="text-5xl font-extrabold mb-6 uppercase leading-tight">
+    DESIGNED TO MOVE WITH YOU
+  </h2>
+  <p class="text-xl font-light mb-8 text-gray-300">
+    Our sneakers aren’t just made — they’re engineered for movement, style, and endurance. 
+    Every pair fuses cutting-edge design with advanced comfort technology, giving you the edge whether 
+    you’re training, exploring the city, or making a statement on the streets.
+  </p>
+
+  <ul class="space-y-4">
+    <li class="flex items-center gap-3 text-lg font-medium">
+      <i data-feather="zap" class="text-accent w-6 h-6"></i>
+      <span>Responsive cushioning that adapts to your every step</span>
+    </li>
+    <li class="flex items-center gap-3 text-lg font-medium">
+      <i data-feather="wind" class="text-accent w-6 h-6"></i>
+      <span>Breathable, lightweight mesh for all-day comfort</span>
+    </li>
+    <li class="flex items-center gap-3 text-lg font-medium">
+      <i data-feather="activity" class="text-accent w-6 h-6"></i>
+      <span>Precision grip soles for traction on any surface</span>
+    </li>
+    <li class="flex items-center gap-3 text-lg font-medium">
+      <i data-feather="trending-up" class="text-accent w-6 h-6"></i>
+      <span>Street-ready design meets athletic performance</span>
+    </li>
+  </ul>
+
+  <a href="/shop"
+     class="mt-8 inline-block bg-accent hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full text-lg uppercase transition-all duration-300 shadow-lg">
+    Shop The Collection
+  </a>
+</div>
+
+
+      <!-- Image content -->
+      <div class="md:w-1/2 order-1 md:order-2 flex justify-center">
+  <div class="max-w-md w-full">
+    <img src="item3.jpg" 
+         alt="Performance Technology" 
+         class="w-full h-auto max-h-[350px] object-cover rounded-lg shadow-2xl border-4 border-accent/50">
+  </div>
+</div>
+
+
+    </div>
+  </div>
+</section>
+
+
+    ---
+
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-extrabold mb-4 uppercase">DON'T MISS THE DROP</h2>
+            <p class="text-xl mb-8 text-gray-600">
+                Sign up for exclusive access to new releases, events, and member-only pricing.
+            </p>
+            <form class="max-w-xl mx-auto flex gap-4">
+                <input type="email" placeholder="Enter your email address" class="flex-grow p-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-accent" required>
+                <button type="submit" class="bg-primary hover:bg-gray-800 text-white font-bold py-4 px-8 rounded-full uppercase transition-colors">
+                    SIGN UP
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <custom-footer></custom-footer>
+
+    <div id="cart-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex justify-end">
+        <div class="bg-white w-full max-w-md h-full overflow-y-auto shadow-2xl">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6 border-b pb-4">
+                    <h3 class="text-2xl font-extrabold uppercase">YOUR CART</h3>
+                    <button id="close-cart" class="text-gray-500 hover:text-primary p-1 transition-colors">
+                        <i data-feather="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <div id="cart-items" class="space-y-6">
+                    <p class="text-center text-gray-500 italic">Your bag is empty.</p>
+                </div>
+                <div class="border-t border-gray-200 mt-6 pt-6">
+                    <div class="flex justify-between mb-2">
+                        <span>Subtotal</span>
+                        <span id="cart-subtotal" class="font-medium">R0.00</span>
+                    </div>
+                    <div class="flex justify-between mb-4">
+                        <span>Shipping</span>
+                        <span class="font-medium text-green-600">FREE</span>
+                    </div>
+                    <div class="flex justify-between font-extrabold text-xl border-t pt-4 mt-4">
+                        <span>ESTIMATED TOTAL</span>
+                        <span id="cart-total">R0.00</span>
+                    </div>
+                    <button class="w-full bg-accent hover:bg-blue-600 text-white font-bold py-4 px-4 rounded-full mt-6 uppercase transition-colors transform hover:scale-[1.01]">
+                        PROCEED TO CHECKOUT
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize Feather icons
+        feather.replace();
+
+        // Basic script to handle filter button active state (for illustration)
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active:bg-primary', 'active:text-white', 'border-primary');
+                    btn.classList.add('border-gray-300', 'hover:border-primary');
+                });
+                this.classList.add('active:bg-primary', 'active:text-white', 'border-primary');
+                this.classList.remove('border-gray-300', 'hover:border-primary');
+            });
+        });
+    </script>
+</body>
+</html>
